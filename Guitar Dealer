@@ -1,0 +1,33 @@
+classDiagram
+
+    Gitare <|-- Electric
+    Gitare <|-- Acusticks
+    Gitare --* disscount :if amount amount >= 2
+    Gitare --* purchase :if amount = 1
+
+    Gitare : +name
+    Gitare : +diler
+    Gitare : +cost
+    Gitare : +amount
+
+class purchase{
+        +purchase_gitare()
+    }
+
+class disscount{
+        disscount = (amount*cost/100*10)
+    }
+
+disscount --> purchase
+
+class Electric{
+        +color
+        +material
+        +rad_grif
+    }
+    
+class Acusticks{
+        +color
+        +material
+        +rad_grif
+    }
